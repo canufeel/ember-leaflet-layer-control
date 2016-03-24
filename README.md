@@ -1,6 +1,6 @@
 # Ember-leaflet-layer-control
 
-Provides Interface for Layer Control functionality in [Ember-Leaflet](http://ember-leaflet.com), an Ember Addon for [Leaflet](http://leafletjs.com) interactive maps.
+Provides Interface for collapsible Layer Control functionality in [Ember-Leaflet](http://ember-leaflet.com), an Ember Addon for [Leaflet](http://leafletjs.com) interactive maps.
 
 This plugin utilizes Leaflet [Layer Groups](http://leafletjs.com/reference.html#layergroup) to create overlay layers in Leaflet [Layer Control](http://leafletjs.com/reference.html#control-layers) and also enables to identify Leaflet [Tile Layers](http://leafletjs.com/reference.html#tilelayer) as baselayers in Layer Control. You can see the demo of Native Leaflet Layer Control implementation [here](http://leafletjs.com/examples/layers-control-example.html).
 
