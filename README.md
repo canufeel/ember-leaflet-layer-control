@@ -1,8 +1,11 @@
 # Ember-leaflet-layer-control
 
-Provides Interface for Layer Control functionality for [Ember-Leaflet](http://ember-leaflet.com), an Ember Addon for [Leaflet](http://leafletjs.com) interactive maps.
+Provides Interface for Layer Control functionality in [Ember-Leaflet](http://ember-leaflet.com), an Ember Addon for [Leaflet](http://leafletjs.com) interactive maps.
 
-This plugin utilizes Leaflet [Layer Groups](http://leafletjs.com/reference.html#layergroup) to create overlay layers in the Leaflet [Layer Control](http://leafletjs.com/reference.html#control-layers) and also enables to identify Leaflet [Tile Layers](http://leafletjs.com/reference.html#tilelayer) as baselayers in Layer Control.
+This plugin utilizes Leaflet [Layer Groups](http://leafletjs.com/reference.html#layergroup) to create overlay layers in Leaflet [Layer Control](http://leafletjs.com/reference.html#control-layers) and also enables to identify Leaflet [Tile Layers](http://leafletjs.com/reference.html#tilelayer) as baselayers in Layer Control. You can see the demo of Native Leaflet Layer Control implementation [here](http://leafletjs.com/examples/layers-control-example.html).
+
+
+![Layer Control](https://cloud.githubusercontent.com/assets/5106750/14034089/d9972a14-f230-11e5-94f7-7e915ff9dbd7.png "Layer control in use")
 
 ## Installation
 
@@ -78,7 +81,7 @@ export default Ember.Component.extend({
 Creating such component would result in a leaflet map with layer-control element. On load the tile layer `tilelayer#1` is selected in layer control and enabled on the map. Both `tilelayer#1` and `tilelayer#2` are shown in layer control as radio buttons. This happens as they both have `baselayer=true` so they are identified as baselayers. There must be just one baselayer per each `{{#layer-group}}{{/layer-group}}` block. The names of layers can be set by setting the `name` attribute on the block. This names currently only are valid during initialization and are not bound. to the values in leaflet layer control. You can use baselayer control to enable seamless support of [Google tile layers](https://github.com/miguelcobain/ember-leaflet-google-tile-layer) implemented as other ember-leaflet plugin.
 
 ####Layergroups
-Layer groups with names `markerLayer#1` and `polylineLayer#1` are real leaflet Layer Groups and can hold as much different leaflet elements as needed and they can be also of different types togather in one group. The component identifies them as native Leaflet Layer groups as the `baselayer=true` is NOT set on them. Their `name` attribute also propagates to layer control on init and they are displayed as checkboxes there. The `{{#layer-group default=true}}{{/layer-group}}` would enable the layer group on the map during init as oposed to excluding the argument or providing `false` value in which case the layer group would be disabled on init.
+Layer groups with names `markerLayer#1` and `polylineLayer#1` are real leaflet Layer Groups and can hold as much different leaflet elements as needed and they can be also of different types together in one group. The component identifies them as native Leaflet Layer groups as the `baselayer=true` is NOT set on them. Their `name` attribute also propagates to layer control on init and they are displayed as checkboxes there. The `{{#layer-group default=true}}{{/layer-group}}` would enable the layer group on the map during init as oposed to excluding the argument or providing `false` value in which case the layer group would be disabled on init.
 
 ####Layer-control
 This component is only available as blockless version. It is important that this component is placed inside the `{{#leaflet-map}}{{/leaflet-map}}` and it should come last, after all `{{#layer-group}}{{/layer-group}}` declarations.
