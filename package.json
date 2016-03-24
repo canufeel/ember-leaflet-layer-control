@@ -1,7 +1,7 @@
 {
   "name": "ember-leaflet-layer-control",
-  "version": "0.0.0",
-  "description": "The default blueprint for ember-cli addons.",
+  "version": "0.0.1",
+  "description": "Addon for Ember-Leaflet which adds Layer Control interface",
   "directories": {
     "doc": "doc",
     "test": "tests"
@@ -37,13 +37,19 @@
     "ember-load-initializers": "^0.5.0",
     "ember-resolver": "^2.0.3",
     "ember-try": "^0.1.2",
-    "loader.js": "^4.0.0"
+    "loader.js": "^4.0.0",
+    "ember-leaflet": "2.2.0"
   },
   "keywords": [
-    "ember-addon"
+    "ember-addon",
+    "ember-leaflet",
+    "ember-leaflet-layer-control",
+    "ember",
+    "leaflet"
   ],
   "dependencies": {
-    "ember-cli-babel": "^5.1.5"
+    "ember-cli-babel": "^5.1.5",
+    "ember-cli-htmlbars": "^1.0.1"
   },
   "ember-addon": {
     "configPath": "tests/dummy/config"

@@ -1,0 +1,1 @@
+export { default } from 'ember-leaflet-layer-control/components/layer-control';
