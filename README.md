@@ -62,7 +62,7 @@ export default Ember.Component.extend({
     {
       title:"marker1",
       description:"this is marker1",
-      location: L.LatLng(53.318602,48.586415)
+      location: new L.LatLng(53.318602,48.586415)
     }
   ],
   polylines:[
