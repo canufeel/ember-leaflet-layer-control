@@ -28,19 +28,19 @@ template.hbs
   {{/layer-group}}
 
   {{#layer-group name="markerLayer#1" default=true}}
-      {{#each markers as |marker|}}
-        {{#marker-layer location=marker.location}}
-          <h3>{{marker.title}}</h3>
-          {{marker.description}}
-        {{/marker-layer}}
-      {{/each}}
+    {{#each markers as |marker|}}
+      {{#marker-layer location=marker.location as |subcomponents|}}
+        {{#subcomponents.popup}}<h3>{{marker.title}}</h3>{{marker.description}}{{/subcomponents.popup}}
+        {{#subcomponents.tooltip}}{{marker.title}} tooltip.{{/subcomponents.tooltip}}
+      {{/marker-layer}}
+    {{/each}}
   {{/layer-group}}
 
   {{#layer-group name="polylineLayer#1"}}
     {{#each polylines as |polyline|}}
-      {{#polyline-layer locations=polyline.locations}}
-        <h3>{{polyline.title}}</h3>
-        {{polyline.description}}
+      {{#polyline-layer locations=polyline.locations as |subcomponents|}}
+        {{#subcomponents.popup}}<h3>{{polyline.title}}</h3>{{polyline.description}}{{/subcomponents.popup}}
+        {{#subcomponents.tooltip}}{{polyline.title}} tooltip.{{/subcomponents.tooltip}}    
       {{/polyline-layer}}
     {{/each}}
   {{/layer-group}}
