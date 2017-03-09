@@ -55,7 +55,7 @@ test('layer group registers baselayers on parent', function(assert) {
     {{/leaflet-map}}
 
     `);
-  let baseLayers = get(layerGroup,'containerLayer._baseLayers');
+  let baseLayers = get(layerGroup,'parentComponent._baseLayers');
   assert.equal(get(baseLayers,'length'),1);
   assert.equal(get(baseLayers,'firstObject.name'),get(this,'name'));
   assert.equal(get(baseLayers,'firstObject.default'),true);
@@ -77,7 +77,7 @@ test('layer group registers overlays on parent', function(assert) {
     {{/leaflet-map}}
 
     `);
-  let layerGroups = get(layerGroup,'containerLayer._layerGroups');
+  let layerGroups = get(layerGroup,'parentComponent._layerGroups');
   assert.equal(get(layerGroups,'length'),1);
   assert.equal(get(layerGroups,'firstObject.name'),get(this,'name'));
   assert.equal(get(layerGroups,'firstObject.default'),false);
