@@ -1,6 +1,6 @@
 {
   "name": "ember-leaflet-layer-control",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Addon for Ember-Leaflet which adds Layer Control interface",
   "directories": {
     "doc": "doc",
