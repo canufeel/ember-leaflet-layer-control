@@ -11,7 +11,7 @@
     "start": "ember server",
     "test": "ember try:testall"
   },
-  "repository": "ttps://github.com/canufeel/ember-leaflet-layer-control.git",
+  "repository": "https://github.com/canufeel/ember-leaflet-layer-control.git",
   "engines": {
     "node": ">= 0.10.0"
   },
