@@ -18,6 +18,16 @@ export default BaseLayer.extend({
   },
   didCreateLayer() {
     this._super(...arguments);
+    let baseLayers = get(this,'parentComponent._baseLayers');
+    if (!isBlank(baseLayers)){
+      baseLayers.forEach(baseLayer=>{
+        if (baseLayer.default){
+          let parentLayer = get(this,'parentComponent._layer');
+          baseLayer.layer.addTo(parentLayer);
+        }
+        this._layer.addBaseLayer(baseLayer.layer, baseLayer.name);
+      });
+    }
     let layerGroups = get(this,'parentComponent._layerGroups');
     if (!isBlank(layerGroups)){
       layerGroups.forEach(layerGroup => {
@@ -28,16 +38,6 @@ export default BaseLayer.extend({
           layerGroup.layer.removeFrom(parentLayer);
         }
         this._layer.addOverlay(layerGroup.layer, layerGroup.name);
-      });
-    }
-    let baseLayers = get(this,'parentComponent._baseLayers');
-    if (!isBlank(baseLayers)){
-      baseLayers.forEach(baseLayer=>{
-        if (baseLayer.default){
-          let parentLayer = get(this,'parentComponent._layer');
-          baseLayer.layer.addTo(parentLayer);
-        }
-        this._layer.addBaseLayer(baseLayer.layer, baseLayer.name);
       });
     }
     let handler = get(this,'handler') || null;
