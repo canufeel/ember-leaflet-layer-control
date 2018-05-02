@@ -48,7 +48,9 @@ export default BaseLayer.extend(ParentMixin, {
         this._layer = this.createLayer();
         if (get(this,'parentComponent')) {
           if (!isNone(get(this,'parentComponent')._layer)) {
-            this.addToContainer();
+            if(this.attrs.default){
+              this.addToContainer();
+            }
           }
         }
       } else {
